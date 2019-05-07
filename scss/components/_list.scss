@@ -1,0 +1,349 @@
+@include breakMaxWidth($breakpointHeaderNav) {
+  .navOpen {
+    .header__navList {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+// header
+// ------------------------------------
+.header {
+  font-size: 1.3rem;
+  &__navList {
+    @include breakMaxWidth($breakpointHeaderNav) {
+      z-index: 1;
+      position: relative;
+      padding: 64px 32px;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    @include breakMinWidth($breakpointSP) {
+      &,
+      .header__navItem,
+      .header__navItem a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &,
+    .header__navItem,
+    .header__navItem a {
+      @include breakMinWidth($breakpointSP) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .header__navItem {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        margin-bottom: 0.5em;
+      }
+      @include breakMaxWidth($breakpointHeaderNav) {
+        .icon {
+          position: relative;
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 2px;
+            background: #fff;
+            top: calc(50% - 0.1em);
+            left: calc(100% + 0.5em);
+            transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+          &::after {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+      a {
+        color: inherit;
+        font-weight: bold;
+        font-feature-settings: "palt";
+        @include breakMinWidth($breakpointSP) {
+          position: relative;
+          height: 56px;
+          padding: 0 4px;
+          line-height: 1;
+          &:hover {
+            &::before {
+              opacity: 0.6;
+              transform: none;
+            }
+          }
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          padding: 0 8px;
+        }
+        @include breakMaxWidth($breakpointHeaderNav) {
+          display: block;
+          padding: 0.5em 16px;
+          &.show {
+            .icon {
+              &::after {
+                transform: none;
+              }
+            }
+          }
+        }
+        @include breakMinWidth($breakpointDesktop) {
+          padding: 0 16px;
+          letter-spacing: 0.07em;
+        }
+        &::before {
+          @include breakMinWidth($breakpointSP) {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $colorMenuHoverBg;
+            opacity: 0;
+            transform: scale(0.9, 0.6);
+            transition: opacity 0.3s, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+      }
+
+      & > a {
+        @include breakMinWidth($breakpointSP) {
+          height: 104px;
+        }
+        @include breakMaxWidth($breakpointHeaderNav) {
+          font-weight: bold;
+          font-size: 1.8rem;
+        }
+      }
+
+      &--about {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverAbout;
+          }
+        }
+        a + .childNavList::before {
+          background: linear-gradient(to right, #ff9c00, #ffd200);
+        }
+      }
+      &--culture {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverCulture;
+          }
+        }
+      }
+      &--member {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverMember;
+          }
+        }
+      }
+      &--special {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverSpecial;
+          }
+        }
+      }
+      &--graduates {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverGraduates;
+          }
+        }
+      }
+      &--info {
+        a:hover {
+          @include breakMinWidth($breakpointSP) {
+            color: $colorMenuHoverInfo;
+          }
+        }
+        a + .childNavList::before {
+          background: linear-gradient(to right, #004eff, #00a2ff);
+        }
+      }
+    }
+  }
+  // .header .childNavList
+  .childNavList {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    @include breakMinWidth($breakpointSP) {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform-origin: 50% 0;
+      transform: rotateX(-90deg);
+      visibility: hidden;
+      opacity: 0;
+    }
+    @include breakMaxWidth($breakpointHeaderNav) {
+      position: relative;
+    }
+    &::before {
+      @include breakMinWidth($breakpointSP) {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.8;
+      }
+    }
+    &.active {
+      @include breakMinWidth($breakpointSP) {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+      }
+    }
+    &.anima {
+      @include breakMinWidth($breakpointSP) {
+        transition: opacity 0.2s, transform 0.3s, visibility 0.3s;
+      }
+    }
+    &.active.anima {
+      @include breakMinWidth($breakpointSP) {
+        transition-duration: 0.3s, 0.3s, 0s;
+      }
+    }
+    li {
+      @include breakMinWidth($breakpointSP) {
+        flex: 0 0 auto;
+        height: 80px;
+      }
+    }
+    a {
+      @include breakMinWidth($breakpointSP) {
+        position: relative;
+        height: 80px;
+        padding: 0 24px;
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+// concept
+// ------------------------------------
+.concept {
+  .servicesProvided {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      max-width: 416px;
+      padding: 0 16px;
+      margin: 0 auto;
+      @include breakMinWidth($breakpointSP) {
+        flex-wrap: nowrap;
+        justify-content: center;
+        max-width: 800px;
+        padding: 0;
+      }
+      li {
+        max-width: 33.333333%;
+        margin: 4px 0;
+        @include breakMinWidth($breakpointSP) {
+          display: block;
+          margin: 8px;
+        }
+        img {
+          &.logoImghpBeauty {
+            width: calc(111vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 111px;
+              height: 35px;
+            }
+          }
+          &.logoImghpGourmet {
+            width: calc(106vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 106px;
+              height: 36px;
+            }
+          }
+          &.logoImgJaran {
+            width: calc(117vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 117px;
+              height: 40px;
+            }
+          }
+          &.logoImgPonpare {
+            width: calc(112vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 112px;
+              height: 44px;
+            }
+          }
+          &.logoImgAirregi {
+            width: calc(114vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 114px;
+              height: 24px;
+            }
+          }
+          &.logoImgSalonboard {
+            width: calc(117vw / 4.8);
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 117px;
+              height: 58px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+// ------------------------------------
+.footer {
+  &__link {
+    ul {
+      width: auto;
+      margin: 0;
+      @include breakMinWidth($breakpointSP) {
+        width: 49.5%;
+        margin: 1em 0;
+      }
+      &:first-child {
+        padding-right: 0;
+        @include breakMinWidth($breakpointSP) {
+          padding-right: 5%;
+        }
+      }
+      li {
+        a {
+          display: block;
+          line-height: 2;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          font-size: 1.2rem;
+          color: $colorBlack;
+          @include breakMinWidth($breakpointSP) {
+            line-height: 2.4;
+          }
+        }
+      }
+    }
+  }
+}

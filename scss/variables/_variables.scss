@@ -1,0 +1,56 @@
+// レスポンシブサイズ
+// ------------------------------------
+$breakpointDesktop: 1200px;
+$breakpointIpad: 1024px;
+$breakpointTabletLandscape: 901px;
+$breakpointHeaderNav: 953px;
+$breakpointSP: 768px;
+$breakpointSP_Portrait: 481px;
+
+
+// その他の変数
+// ------------------------------------
+$columnCount: 6;
+
+// color
+// ------------------------------------
+$colorWhite: #fff;
+$colorBlack: #121212;
+$colorFooterBorder: #d7d7d7;
+$colorFooterIconBg: rgba(255, 255, 255, 0.2);
+// color: ヘッダーメニュー、ホバー時の色
+$colorMenuHoverBg: #e9e9e9;
+$colorMenuHoverAbout: #ffcb00;
+$colorMenuHoverCulture: #008aff;
+$colorMenuHoverInfo: #008aff;
+$colorMenuHoverMember: #ff5238;
+$colorMenuHoverSpecial: #41da70;
+$colorMenuHoverGraduates: #8943ef;
+
+// linear-gradient
+// ------------------------------------
+$linearGradientVisual: linear-gradient(to bottom, #2679cd, #4db2f2);
+// linear-gradient: ボタンの色
+$linearGradientBtnPrimary: linear-gradient(to right, #004eff, #008aff);
+$linearGradientBtnSkill: linear-gradient(to right, #ffb400, #ffd200);
+$linearGradientBtnMember: linear-gradient(to right, #ff4444, #ff6c00);
+$linearGradientBtnSpecial: linear-gradient(to right, #00d596, #12e671);
+$linearGradientBtnGraduates: linear-gradient(to right, #6e41e1, #b931da);
+// linear-gradient: カラムの背景色
+$linearGradientColumnBgPrimary: linear-gradient(to right, #004eff, #00a2ff);
+$linearGradientColumnBgSkill: linear-gradient(to right, #ff9c00, #ffd200);
+$linearGradientColumnBgMember: linear-gradient(to right, #ff4444, #ff9000);
+$linearGradientColumnBgSpecial: linear-gradient(to right, #00d596, #12e62b);
+$linearGradientColumnBgGraduates: linear-gradient(to right, #6e41e1, #dd53ff);
+
+// マップ定義
+// ------------------------------------
+
+// カラム毎の背景色
+$columnKindBgLinearGradientColorMap: (
+  culture: $linearGradientColumnBgPrimary,
+  skill: $linearGradientColumnBgSkill,
+  member: $linearGradientColumnBgMember,
+  special: $linearGradientColumnBgSpecial,
+  graduates: $linearGradientColumnBgGraduates,
+);

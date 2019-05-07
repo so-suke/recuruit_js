@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1400" viewBox="0 0 1240 1400">
+<style>.mr{fill-rule:evenodd;clip-rule:evenodd;fill:url(#mr)}.nm{fill-rule:evenodd;clip-rule:evenodd;fill:url(#nm)}.ei{fill-rule:evenodd;clip-rule:evenodd;fill:url(#ei)}.mg{fill-rule:evenodd;clip-rule:evenodd;fill:url(#mg)}.pn{fill-rule:evenodd;clip-rule:evenodd;fill:url(#pn)}</style>
+<linearGradient id="mr"><stop offset="0" stop-color="#f44"/><stop offset="1" stop-color="#ff6c00"/></linearGradient>
+<linearGradient id="nm"><stop offset="0" stop-color="#00d596"/><stop offset="1" stop-color="#12e671"/></linearGradient>
+<linearGradient id="ei"><stop offset="0" stop-color="#ffb400"/><stop offset="1" stop-color="#ffd200"/></linearGradient>
+<linearGradient id="mg"><stop offset="0" stop-color="#6e41e1"/><stop offset="1" stop-color="#b931da"/></linearGradient>
+<linearGradient id="pn"><stop offset="0" stop-color="#004eff"/><stop offset="1" stop-color="#008aff"/></linearGradient>
+<path class="mr" d="M192.8 586.5c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"/>
+<path class="nm" d="M1218.8 456.5c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"/>
+<path class="ei" d="M116.8 95.5c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"/>
+<path class="mg" d="M457.8 1121.5c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.8-15 15-15z"/>
+<path class="pn" d="M810.8 648.5c8.3 0 15 6.7 15 15s-6.7 15-15 15-15-6.7-15-15 6.7-15 15-15z"/></svg>

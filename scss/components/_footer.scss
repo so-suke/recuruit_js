@@ -1,0 +1,66 @@
+.footer {
+  border-top: 1px solid $colorFooterBorder;
+  margin-top: 68px;
+  padding: 34px 16px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: $colorFooterIconBg url(/img/line.svg) center bottom repeat-x;
+  @include breakMinWidth($breakpointSP) {
+    display: flex;
+    padding: 24px 16px 52px;
+    margin-top: 120px;
+    text-align: initial;
+  }
+  @include breakMinWidth($breakpointIpad) {
+    padding: 24px 6% 52px;
+  }
+
+  &__link {
+    @include breakMinWidth($breakpointSP) {
+      display: flex;
+      flex-grow: 2;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    margin-top: 35px;
+    @include breakMinWidth($breakpointSP) {
+      justify-content: flex-end;
+      margin-top: 20px;
+      padding: 0 8px 8px;
+      border-left: 1px solid $colorFooterBorder;
+    }
+    .logoImg {
+      margin-bottom: 4px;
+      @include breakMinWidth($breakpointSP_Portrait) {
+        margin-bottom: 8px;
+      }
+      @include breakMinWidth($breakpointSP) {
+        width: 240px;
+        margin-bottom: 3px;
+      }
+      @include breakMinWidth($breakpointIpad) {
+        width: 285px;
+      }
+    }
+    .footer__logoInner {
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+      height: 100%;
+      @include breakMinWidth($breakpointSP) {
+        display: block;
+        height: 150px;
+        width: auto;
+      }
+      @include breakMinWidth($breakpointDesktop) {
+        display: flex;
+        flex-direction: column;
+        width: 328px;
+      }
+    }
+  }
+}

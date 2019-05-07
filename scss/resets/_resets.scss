@@ -1,0 +1,32 @@
+@import "../../node_modules/bootstrap-scss/bootstrap-reboot";
+
+html {
+  color: $colorBlack;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin-bottom: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}

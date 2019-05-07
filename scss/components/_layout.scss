@@ -1,0 +1,601 @@
+// body
+// ------------------------------------
+body {
+  line-height: 1.8;
+}
+
+// wrapper
+// ------------------------------------
+.wrapper {
+  overflow: hidden;
+}
+
+// entireBackgroud
+// ------------------------------------
+.entireBackgroud {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0.8;
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+  }
+  .large {
+    height: 300%;
+    background: url(/img/bg_l.svg) center 0 / cover repeat-y;
+  }
+  .medium {
+    height: 200%;
+    background: url(/img/bg_m.svg) center 0 / cover repeat-y;
+  }
+  .small {
+    height: 180%;
+    background: url(/img/bg_s.svg) center 0 / cover repeat-y;
+  }
+}
+
+// visual
+// ------------------------------------
+.visual {
+  height: 100vh;
+  margin-bottom: 88px;
+  position: relative;
+  overflow: hidden;
+  background: $linearGradientVisual;
+  @include breakMinWidth($breakpointSP) {
+    height: 800px;
+    margin-bottom: 216px;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 110%;
+    background: url(/img/visual_intro_ball_sp.svg) center / cover no-repeat;
+    @include breakMinWidth($breakpointSP) {
+      left: calc(50% - 650px);
+      width: 1300px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: repeat-y;
+      background-image: url(/img/visual_intro_ball_l.svg), url(/img/visual_intro_ball_m.svg),
+        url(/img/visual_intro_ball_s.svg);
+    }
+  }
+  // .visual__imgs
+  & &__imgs {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      position: static;
+      right: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      will-change: transform;
+    }
+    .position {
+      position: absolute;
+      &--1,
+      &--2,
+      &--3,
+      &--4,
+      &--5,
+      &--6 {
+        @include breakMaxWidth($breakpointTabletLandscape - 1) {
+          transform: translateY(-50%);
+        }
+      }
+
+      &--2,
+      &--4 {
+        display: none;
+        @include breakMinWidth($breakpointSP) {
+          display: block;
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          display: block;
+        }
+      }
+      &--1 {
+        top: 45%;
+        right: 84%;
+        width: calc(142vw / 6.67);
+        height: calc(382vw / 9);
+        @include breakMinWidth($breakpointSP) {
+          top: 49%;
+          width: calc(142vw / 9);
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(49% - 191px);
+          width: 142px;
+          height: 382px;
+        }
+      }
+      &--2 {
+        top: 42%;
+        right: 60%;
+        width: calc(204vw / 9);
+        height: calc(363vw / 9);
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(42% - 182px);
+          width: 204px;
+          height: 363px;
+        }
+      }
+      &--3 {
+        top: 46%;
+        left: 76%;
+        width: calc(134vw / 6.67);
+        height: calc(404vw / 9);
+        @include breakMinWidth($breakpointSP) {
+          top: 47%;
+          left: 66%;
+          width: calc(134vw / 9);
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(47% - 202px);
+          width: 134px;
+          height: 404px;
+        }
+      }
+      &--4 {
+        top: 50%;
+        left: 85%;
+        width: calc(206vw / 9);
+        height: calc(393vw / 9);
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(50% - 197px);
+          width: 206px;
+          height: 393px;
+        }
+      }
+      &--5 {
+        top: 46%;
+        right: 73%;
+        width: calc(238vw / 7.67);
+        height: calc(358vw / 9);
+        @include breakMinWidth($breakpointSP) {
+          right: 73%;
+          width: calc(238vw / 9);
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(46% - 179px);
+          width: 238px;
+          height: 358px;
+        }
+      }
+      &--6 {
+        top: 47%;
+        left: 78%;
+        width: calc(266vw / 7.67);
+        height: calc(352vw / 9);
+        @include breakMinWidth($breakpointSP) {
+          top: 46%;
+          left: 70%;
+          width: calc(266vw / 9);
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          top: calc(46% - 176px);
+          width: 266px;
+          height: 352px;
+        }
+      }
+      &--7 {
+        left: 49%;
+        bottom: 0;
+        width: auto;
+        height: 88vh;
+        @include breakMinWidth($breakpointSP) {
+          left: 50%;
+          bottom: -120px;
+          width: 500px;
+          height: 890px;
+        }
+        @include breakMaxWidth($breakpointTabletLandscape - 1) {
+          transform: translateX(-50%);
+        }
+        @include breakMinWidth($breakpointTabletLandscape) {
+          left: calc(50% - 250px);
+        }
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // .visual__scroll
+  &__scroll {
+    position: absolute;
+    left: 0;
+    bottom: 24px;
+    width: 100vw;
+    color: $colorWhite;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    @include breakMinWidth($breakpointSP) {
+      left: 24px;
+      transform-origin: 0% 100%;
+      transform: rotate(90deg) translateX(-100%);
+      width: 154px;
+      letter-spacing: 0.1em;
+      text-align: initial;
+    }
+    &::after {
+      @include breakMinWidth($breakpointSP) {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 154px;
+        height: 6px;
+        background: url(/img/arr_scroll.svg) center / cover no-repeat;
+      }
+    }
+  }
+}
+
+// main
+// ------------------------------------
+.main {
+  padding: 16px;
+}
+
+// concept
+// ------------------------------------
+.concept {
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+// column
+// ------------------------------------
+.column {
+  @include breakMinWidth($breakpointSP) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 152px;
+    @include breakMinWidth($breakpointSP) {
+      margin-bottom: 224px;
+    }
+  }
+  // column__contentSide
+  &__contentSide {
+    @include breakMinWidth($breakpointSP) {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-right: 80px;
+    }
+    .column__contentInner {
+      position: relative;
+      @include breakMinWidth($breakpointSP) {
+        max-width: 368px;
+      }
+      .pc {
+        display: none;
+        @include breakMinWidth($breakpointSP) {
+          display: block;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+  // .column__imgSide
+  &__imgSide {
+    position: relative;
+    @include breakMinWidth($breakpointSP) {
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .sp {
+      margin: 14px 0;
+      @include breakMinWidth($breakpointSP) {
+        display: none;
+      }
+    }
+    .column__imgs {
+      &::before {
+        content: "";
+        position: absolute;
+        opacity: 0.8;
+        background: $linearGradientColumnBgPrimary;
+      }
+      figure {
+        position: relative;
+        img {
+          width: 100%;
+        }
+      }
+      &--single {
+        display: inline-block;
+        position: relative;
+        padding-bottom: 32px;
+        @include breakMinWidth($breakpointSP) {
+          padding-bottom: 80px;
+        }
+        &::before {
+          width: 100%;
+          height: 100%;
+          bottom: 0;
+        }
+      }
+      &--group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        padding: 24px 0 24px;
+        @include breakMinWidth($breakpointSP_Portrait) {
+          padding-top: 0;
+        }
+        @include breakMinWidth($breakpointSP) {
+          max-width: 664px;
+        }
+        figure {
+          position: relative;
+          max-width: calc(50% - 12px);
+          margin-top: 24px;
+          @include breakMinWidth($breakpointSP_Portrait) {
+            max-width: calc(50% - 16px);
+            margin-top: 24px;
+          }
+          @include breakMinWidth($breakpointSP) {
+            max-width: calc(50% - 24px);
+            margin-top: 48px;
+          }
+          &:nth-child(even) {
+            @include breakMinWidth($breakpointSP) {
+              top: -48px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // column--reverse
+  &--reverse {
+    .column__contentSide {
+      @include breakMinWidth($breakpointSP) {
+        order: 2;
+        justify-content: flex-start;
+        padding-left: 80px;
+      }
+    }
+    .column__imgSide {
+      @include breakMinWidth($breakpointSP) {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &--culture .column__imgs--group figure:nth-child(odd),
+  &--skill .column__imgs--group figure:nth-child(even) {
+    top: -24px;
+    @include breakMinWidth($breakpointSP) {
+      top: auto;
+    }
+  }
+
+  &--culture,
+  &--member,
+  &--graduates {
+    .column__imgSide .sp {
+      text-align: right;
+    }
+  }
+
+  &--culture {
+    @include breakMinWidth($breakpointSP) {
+      margin-right: -16px;
+    }
+    figure {
+      @include breakMinWidth($breakpointSP) {
+        left: -80px;
+      }
+    }
+    .column__imgs {
+      &::before {
+        top: 0;
+        right: -16px;
+        left: 64px;
+        bottom: 0;
+        @include breakMinWidth($breakpointSP) {
+          top: 168px;
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+    .column__contentSide {
+      @include breakMinWidth($breakpointIpad) {
+        padding-right: 160px;
+      }
+      @include breakMinWidth($breakpointSP) {
+        padding-right: 120px;
+      }
+    }
+  }
+  &--skill {
+    @include breakMinWidth($breakpointSP) {
+      margin-left: -16px;
+    }
+    figure {
+      @include breakMinWidth($breakpointSP) {
+        left: 80px;
+      }
+    }
+    .column__contentSide {
+      @include breakMinWidth($breakpointSP) {
+        padding-left: 120px;
+      }
+      @include breakMinWidth($breakpointIpad) {
+        padding-left: 160px;
+      }
+    }
+    .column__imgs {
+      &::before {
+        right: 64px;
+        left: -16px;
+        background: $linearGradientColumnBgSkill;
+        @include breakMinWidth($breakpointSP) {
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  &--culture,
+  &--skill {
+    .column__contentInner {
+      @include breakMinWidth($breakpointSP) {
+        padding-top: 312px;
+      }
+    }
+    .column__imgs {
+      &::before {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        @include breakMinWidth($breakpointSP) {
+          top: 168px;
+          bottom: 112px;
+        }
+      }
+    }
+  }
+  &--member,
+  &--graduates {
+    .column__imgs {
+      &::before {
+        left: -32px;
+        height: calc(100% - 32px);
+        @include breakMinWidth($breakpointSP) {
+          left: auto;
+          right: -80px;
+          height: calc(100% - 80px);
+        }
+      }
+    }
+  }
+  &--member {
+    figure {
+      @include breakMinWidth($breakpointSP) {
+        max-width: 640px;
+      }
+    }
+    .column__contentSide {
+      @include breakMinWidth($breakpointSP) {
+        flex-basis: calc(50% - 80px);
+      }
+      .column__contentInner {
+        @include breakMinWidth($breakpointSP) {
+          padding-top: 176px;
+        }
+      }
+    }
+    .column__imgSide {
+      @include breakMinWidth($breakpointSP) {
+        flex-basis: calc(50% + 80px);
+      }
+    }
+    .column__imgs {
+      &::before {
+        background: $linearGradientColumnBgMember;
+      }
+    }
+  }
+  &--special {
+    .column__contentSide {
+      @include breakMinWidth($breakpointSP) {
+        padding-left: 80px;
+      }
+      @include breakMinWidth($breakpointSP_Portrait) {
+        padding-left: 40px;
+      }
+      .column__contentInner {
+        @include breakMinWidth($breakpointSP) {
+          max-width: 368px;
+        }
+      }
+    }
+    .column__imgs {
+      @include breakMinWidth($breakpointSP_Portrait) {
+        left: -24px;
+      }
+      @include breakMinWidth($breakpointSP) {
+        left: 0px;
+      }
+      figure {
+        @include breakMinWidth($breakpointSP) {
+          max-width: 500px;
+        }
+      }
+      &::before {
+        right: -32px;
+        height: calc(100% - 32px);
+        @include breakMinWidth($breakpointSP) {
+          left: -80px;
+          height: calc(100% - 80px);
+        }
+        background: $linearGradientColumnBgSpecial;
+      }
+    }
+  }
+  &--graduates {
+    .column__contentSide {
+      @include breakMinWidth($breakpointSP) {
+        padding-left: 80px;
+      }
+      @include breakMinWidth($breakpointSP_Portrait) {
+        padding-left: 40px;
+      }
+      .column__contentInner {
+        @include breakMinWidth($breakpointSP) {
+          padding-top: 152px;
+        }
+      }
+    }
+    .column__imgs {
+      right: -16px;
+      @include breakMinWidth($breakpointSP_Portrait) {
+        right: -24px;
+      }
+      @include breakMinWidth($breakpointSP) {
+        right: 0px;
+      }
+      &::before {
+        background: $linearGradientColumnBgGraduates;
+      }
+      figure {
+        @include breakMinWidth($breakpointSP) {
+          max-width: 460px;
+        }
+      }
+    }
+  }
+}

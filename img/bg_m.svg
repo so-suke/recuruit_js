@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1400" viewBox="0 0 1240 1400">
+<style>.mr{fill-rule:evenodd;clip-rule:evenodd;fill:url(#mr)}.nm{fill-rule:evenodd;clip-rule:evenodd;fill:url(#nm)}.ei{fill-rule:evenodd;clip-rule:evenodd;fill:url(#ei)}.mg{fill-rule:evenodd;clip-rule:evenodd;fill:url(#mg)}.pn{fill-rule:evenodd;clip-rule:evenodd;fill:url(#pn)}</style>
+<linearGradient id="mr"><stop offset="0" stop-color="#f44"/><stop offset="1" stop-color="#ff6c00"/></linearGradient>
+<linearGradient id="nm"><stop offset="0" stop-color="#00d596"/><stop offset="1" stop-color="#12e671"/></linearGradient>
+<linearGradient id="ei"><stop offset="0" stop-color="#ffb400"/><stop offset="1" stop-color="#ffd200"/></linearGradient>
+<linearGradient id="mg"><stop offset="0" stop-color="#6e41e1"/><stop offset="1" stop-color="#b931da"/></linearGradient>
+<linearGradient id="pn"><stop offset="0" stop-color="#004eff"/><stop offset="1" stop-color="#008aff"/></linearGradient>
+<path class="mr" d="M1062.8 1337.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="mr" d="M97.8 913.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="mr" d="M13.8 1207.5c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4.1-9 9-9z"/>
+<path class="mr" d="M1152.8 162.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10 4.5-10 10-10z"/>
+<path class="nm" d="M1169.8 861.5c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4.1-9 9-9z"/>
+<path class="nm" d="M320.8 1364.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="nm" d="M767.8 373.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="ei" d="M875.8 1021.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="ei" d="M610.8 793.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/>
+<path class="ei" d="M638.8 42.5c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9z"/>
+<path class="mg" d="M1236.6 1238c2 0 3.6 1.6 3.6 3.6s-1.6 3.6-3.6 3.6-3.6-1.6-3.6-3.6 1.6-3.6 3.6-3.6z"/>
+<path class="pn" d="M348.8 306.5c5.5 0 10 4.5 10 10s-4.5 10-10 10-10-4.5-10-10c0-5.6 4.5-10 10-10z"/></svg>

@@ -1,0 +1,312 @@
+@include breakMaxWidth($breakpointHeaderNav) {
+  .navOpen {
+    .header__nav {
+      &.anima {
+        & + .header__navToggle {
+          &::before,
+          &::after,
+          .bar {
+            transition-delay: 0s;
+          }
+        }
+        & + .header__navToggle .bg {
+          transition-delay: 0s;
+        }
+      }
+    }
+
+    .header__navToggle {
+      &::before {
+        transform: rotate(225deg);
+      }
+      &::after {
+        transform: rotate(-225deg);
+      }
+      .bar {
+        transform: translateX(100px);
+      }
+      .bg {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// header
+// ------------------------------------
+.header {
+  &__linkBtn {
+    @include breakMinWidth($breakpointSP) {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 56px;
+      margin-left: 8px;
+      padding: 0 24px;
+      border-radius: 50px;
+      color: $colorWhite;
+      font-weight: bold;
+    }
+    @include breakMinWidth($breakpointIpad) {
+      margin-left: 16px;
+      padding: 0 32px;
+    }
+    @include breakMinWidth($breakpointDesktop) {
+      margin-left: 24px;
+      padding: 0 40px;
+      justify-content: center;
+    }
+    &::before {
+      @include breakMinWidth($breakpointSP) {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $linearGradientBtnPrimary;
+        border-radius: 50px;
+        opacity: 1;
+      }
+    }
+    &:hover {
+      color: $colorWhite;
+    }
+  }
+
+  &__navToggle {
+    display: none;
+    cursor: pointer;
+    @include breakMaxWidth($breakpointHeaderNav) {
+      display: block;
+      z-index: 1;
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      padding: 14px;
+      border: 0;
+      outline: none;
+      background: none;
+    }
+    &,
+    .bg {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+      }
+    }
+
+    &::before,
+    &::after {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        content: "";
+      }
+    }
+
+    &::before,
+    &::after,
+    & .bar {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        display: block;
+        z-index: 1;
+        position: absolute;
+        top: calc(50% - 1px);
+        width: 20px;
+        height: 2px;
+        background: $colorWhite;
+      }
+    }
+    &::before {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        transform: translateY(-7px);
+      }
+    }
+    &::after {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        transform: translateY(7px);
+      }
+    }
+
+    .bg {
+      @include breakMaxWidth($breakpointHeaderNav) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $linearGradientBtnPrimary;
+      }
+    }
+  }
+
+  //headerアニメーション関連
+  @include breakMaxWidth($breakpointHeaderNav) {
+    &__nav {
+      &.anima {
+        & + .header__navToggle {
+          &::before,
+          &::after {
+            transition: transform 0.3s 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+          .bar {
+            transition: transform 0.6s 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+          }
+          .bg {
+            transition: opacity 0.3s 0.6s;
+          }
+        }
+      }
+    }
+  }
+}
+
+// column
+// ------------------------------------
+.column {
+  .btn {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    margin-top: 32px;
+    padding: 1em 24px;
+    border-radius: 2em;
+    color: $colorWhite;
+    text-align: left;
+    @include breakMinWidth($breakpointSP) {
+      max-width: 232px;
+      margin-top: 64px;
+      font-size: 1.6rem;
+    }
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50px;
+      background: $linearGradientBtnPrimary;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 8px);
+      right: 24px;
+      width: 10px;
+      height: 16px;
+      background: url(/img/ico_arrow.svg) center / cover no-repeat;
+    }
+  }
+
+  // column--modifier
+  &--skill {
+    .btn {
+      &::before {
+        background: $linearGradientBtnSkill;
+      }
+    }
+  }
+  &--member {
+    .btn {
+      &::before {
+        background: $linearGradientBtnMember;
+      }
+    }
+  }
+  &--special {
+    .btn {
+      &::before {
+        background: $linearGradientBtnSpecial;
+      }
+    }
+  }
+  &--graduates {
+    .btn {
+      &::before {
+        background: $linearGradientBtnGraduates;
+      }
+    }
+  }
+}
+
+// footer
+// ------------------------------------
+.footer {
+  &__linkbtns li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__linkbtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-bottom: 25px;
+    width: 100%;
+    @include breakMinWidth($breakpointSP) {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 0;
+      justify-content: flex-start;
+    }
+    li {
+      a {
+        position: relative;
+        height: 48px;
+        min-width: 100px;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        line-height: 1;
+        text-decoration: inherit;
+        color: $colorWhite;
+        white-space: nowrap;
+        @include breakMinWidth($breakpointSP_Portrait) {
+          height: 59px;
+          padding: 0 16px;
+          font-size: 1.5rem;
+        }
+        @include breakMinWidth($breakpointIpad) {
+          width: 160px;
+          padding: 0 24px;
+        }
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          border-radius: 50px;
+          background: $linearGradientBtnPrimary;
+        }
+
+        &.share {
+          &::before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            top: -0.01em;
+            width: 1em;
+            height: 1em;
+            margin-right: 0.5em;
+            vertical-align: middle;
+            background: url(../img/ico_fb.svg) center / cover no-repeat;
+            @include breakMinWidth($breakpointSP_Portrait) {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        &.pagetop {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

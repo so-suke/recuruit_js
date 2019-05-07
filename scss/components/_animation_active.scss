@@ -1,0 +1,280 @@
+.visual {
+  &.jsCheckin {
+    &.active {
+      transform-origin: 50% 0;
+      transform: none;
+      .visual {
+        &__bg {
+          opacity: 1;
+          transform: none;
+          transition: opacity 1s, transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        &__logoTitle {
+          .title {
+            &--1 {
+              transition-delay: 1.4s;
+              &::after {
+                transition-delay: 1.7s;
+              }
+            }
+            &--2 {
+              transition-delay: 1.6s;
+              &::after {
+                transition-delay: 1.9s;
+              }
+            }
+          }
+        }
+        &__logoTitle span,
+        &__imgs .position {
+          transform-origin: 50% 100%;
+          transform: none;
+          &::after {
+            transform-origin: 50% 0;
+            transform: scaleY(0);
+          }
+        }
+        &__imgs {
+          .position {
+            &--1 {
+              transition-delay: 0.6s;
+              &::after {
+                transition-delay: 0.9s;
+              }
+            }
+            &--2 {
+              transition-delay: 1s;
+              &::after {
+                transition-delay: 1.3s;
+              }
+            }
+            &--3 {
+              transition-delay: 1.1s;
+              &::after {
+                transition-delay: 1.4s;
+              }
+            }
+            &--4 {
+              transition-delay: 0.7s;
+              &::after {
+                transition-delay: 1s;
+              }
+            }
+            &--5 {
+              transition-delay: 0.8s;
+              &::after {
+                transition-delay: 1.1s;
+              }
+            }
+            &--6 {
+              transition-delay: 0.9s;
+              &::after {
+                transition-delay: 1.2s;
+              }
+            }
+            &--7 {
+              transition-delay: 0.5s;
+              &::after {
+                transition-delay: 0.8s;
+                transition-duration: 1s;
+              }
+            }
+          }
+        }
+      }
+
+      &,
+      .visual__logoTitle span,
+      .visual__logoTitle span::after,
+      .visual__imgs div,
+      .visual__imgs div::after {
+        transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      &.fix {
+        transition: none;
+        .visual__imgs {
+          & > div {
+            transition: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.concept.jsCheckin.active {
+  .concept__title span,
+  .concept__lead span,
+  .servicesProvided__title {
+    transform: none;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .concept__title .title::after,
+  .bg::after,
+  .concept__lead span::after,
+  .servicesProvided__title::after {
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .concept__title {
+    .bg::after,
+    .title::after {
+      transition-delay: 0.3s;
+    }
+  }
+  .concept__lead {
+    span {
+      transition-delay: 0.4s;
+    }
+    span::after {
+      transition-delay: 0.8s;
+    }
+  }
+
+  .servicesProvided {
+    &__title {
+      transition-delay: 0.6s;
+    }
+
+    &__list li,
+    &__note {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.6s, transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &__note {
+      opacity: 1;
+      transition: opacity 1s;
+      transition-delay: 1.4s;
+    }
+
+    &__list {
+      li {
+        transition-delay: 1.3s;
+      }
+    }
+  }
+}
+
+.column {
+  &.jsCheckin.active {
+    .column__imgs figure,
+    .column__title .ja,
+    .column__title .en,
+    p.lead {
+      transform-origin: 0 50%;
+      transform: none;
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .column__imgs figure::after,
+    .column__title .ja::after,
+    .column__title .en::after,
+    p.lead::after {
+      transform-origin: 100% 50%;
+      transform: scaleX(0);
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    p.lead {
+      transition-delay: 1s;
+      &::after {
+        @include breakMinWidth($breakpointSP) {
+          transition-delay: 1.3s;
+        }
+      }
+    }
+
+    .column {
+      &__title {
+        .ja {
+          transition-delay: 0s;
+          &::after {
+            transition-delay: 0.3s;
+          }
+        }
+      }
+      &__imgs {
+        &::before {
+          opacity: 0.8;
+          transform: none !important;
+          transition: opacity 1s, transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+          transition-delay: 0.9s;
+          @include breakMinWidth($breakpointSP) {
+            transition-delay: 0.6s;
+          }
+        }
+        figure {
+          transform-origin: 50% 0;
+          &::after {
+            transform-origin: 50% 100%;
+            transform: scaleY(0);
+          }
+          &:nth-child(1) {
+            transition-delay: 0.1s;
+            @include breakMinWidth($breakpointSP) {
+              transition-delay: 0.1s;
+            }
+            &::after {
+              transition-delay: 0.4s;
+              @include breakMinWidth($breakpointSP) {
+                transition-delay: 0.7s;
+              }
+            }
+          }
+          &:nth-child(2) {
+            transition-delay: 0s;
+            &::after {
+              transition-delay: 0.3s;
+            }
+          }
+          &:nth-child(3) {
+            transition-delay: 0.3s;
+            &::after {
+              transition-delay: 0.6s;
+            }
+          }
+          &:nth-child(4) {
+            transition-delay: 0.2s;
+            &::after {
+              transition-delay: 0.5s;
+            }
+          }
+          &:nth-child(5) {
+            transition-delay: 0.5s;
+            &::after {
+              transition-delay: 0.8s;
+            }
+          }
+          &:nth-child(6) {
+            transition-delay: 0.4s;
+            &::after {
+              transition-delay: 0.7s;
+            }
+          }
+        }
+      }
+
+      &__title {
+        .ja {
+          &::after {
+            @include breakMinWidth($breakpointSP) {
+              transition-delay: 1.1s;
+            }
+          }
+        }
+        .en {
+          &::after {
+            @include breakMinWidth($breakpointSP) {
+              transition-delay: 1.2s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
